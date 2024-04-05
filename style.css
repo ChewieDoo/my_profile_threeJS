@@ -1,0 +1,239 @@
+@import url("https://use.typekit.net/jmk3xov.css");
+
+html, body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#roboMovement{
+  z-index: 2;
+}
+#bg{
+  z-index: 1;
+}
+
+body{
+  min-width: 600px;
+}
+
+:root {
+  --dark-bg: rgba(15, 15, 15, 0.95);
+  --light-bg: rgba(30, 30, 30, 0.95);
+  --spacing: 400px;
+
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* NavBar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;  /* Element with higher Z index are placed above elements with low z-index*/
+}
+.navbar-brand{
+  color: white;
+}
+.navbar-brand:hover {
+  color:white;
+  font-weight: bold;
+}
+.navbar-nav .nav-link {
+  color: white;
+}
+.navbar-nav .nav-link.active {
+  color: white;
+  font-weight: bold;
+}
+
+/* Main elements are respective texts*/
+main {
+  width: 100vw;
+  color: white;
+  z-index: 99;
+  position: absolute;
+  margin: 0px auto;
+  padding: 120px 0px;
+  
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /*Creates 12 column of equal width of 1fr (fractional units) divided equally across 12 columns*/
+}
+h1 {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size:4.2rem;
+}
+
+h2, h3, blockquote {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-style: light;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.btn-outline-primary{
+  color: #96ccc0;
+  border-color: #96ccc0;
+}
+.btn-outline-primary:hover{
+  background-color: #96ccc0;
+  color: white;
+  border-color: #96ccc0;
+}
+
+
+.left {
+  grid-column: 6 / 12;
+}
+.clear {
+  background:none;
+}
+
+  /* Sections */
+  section {
+    grid-column: 2 / 8;
+    padding: 1rem;
+    background: var(--dark-bg);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing);
+  }
+  section.greetings {
+    background: var(--dark-bg);
+    grid-column: 2 / span 5;
+    font-size: 3rem;
+    padding: 2rem;
+    margin-top: 150px;
+    margin-bottom: var(--spacing);
+  }
+  section.greetings p {
+    font-size: 1.5rem;
+  }
+
+  section.heading {
+    background:none;
+    margin-top: 150px;
+    margin-bottom: 25px;
+  }
+
+  section.wrapper{
+    grid-column: 2 / span 10;
+    padding: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing);
+    justify-content: center;
+  }
+  section.text-entry{
+    grid-column: 8 /  12;
+    padding: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing);
+  }
+  section.footer{
+    grid-column: 1 / span 12;
+    padding: 1rem;
+    background: none;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing);
+    text-align:center;
+    margin-bottom: 10px;
+  }
+  .footer small {
+    display: block;
+    margin: 0 auto;
+    max-width: 350px; /* Adjust as needed */
+    font-size: 0.75rem;
+    text-align:center;
+  }
+  
+
+
+  /* Row texts */
+  .row {
+    background: var(--light-bg);
+    display:grid;
+    grid-template-columns: repeat(12,1fr); 
+    gap: 5px; 
+    margin-left:5px;
+    margin-right:5px;
+    margin-top:10px;
+    margin-bottom:10px;
+    align-self: center;
+  }
+  .row-heading {
+    grid-column: 1 / 3;
+    margin-left:10px;
+    gap: 5px;
+    text-align:center;
+  }
+  .row-content1 {
+    grid-column: 4 / 9;
+    align-self:center;
+    gap: 5px;
+  }
+  .row-content2 {
+    grid-column: 10 / 13;
+    margin-top:20px;
+    gap: 5px;
+  }
+
+  /* Block Text */
+  .block{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:20px;
+    text-align:center;
+  }
+  .block-content{
+    background-color: var(--dark-bg);
+    padding:20px
+  }
+  .block-content img {
+    width: 100%;
+    height: auto;
+  }
+  .block-title{
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* Quotes */
+  blockquote {
+    margin: 0;
+    padding: 0;
+    grid-column: 2 / span 5;
+    margin-bottom: var(--spacing);
+  }
+  blockquote p {
+    color: black;
+    background-color: white;
+    font-size: 3rem;
+    display: inline;
+    line-height: 1.3;
+  }
+  a{
+    color: #96ccc0;
+  }
+
+
+
+  
