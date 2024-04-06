@@ -23,7 +23,7 @@ I used Three.js for building objects, setting camera, and rendering the environm
 I used Vite to initialize project and handle dependencies.
 
 ```
-npm init @vitejs/app
+npm init vite
 ```
 
 I got `package.json` from it which I learned it used to install dependencies. Here is where I installed 3JS and ran my project.
