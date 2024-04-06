@@ -81,11 +81,12 @@ let spaceShip;
 loader.load(
   'models/spaceship/scene.gltf',
   function(gltf){
-    spaceShip= gltf.scene;
+    spaceShip = gltf.scene;
     scene.add(spaceShip);
     spaceShip.scale.set(0.5,0.5,0.5);
-    spaceShip.position.z = 56;
+    spaceShip.position.z = 60;
     spaceShip.position.x = -35;
+    spaceShip.position.y = -3;
     spaceShip.rotation.y = -10;
   },
   function(xhr){
@@ -95,6 +96,24 @@ loader.load(
     console.error(error);
   }
 );
+let earth;
+loader.load(
+  'models/earth/scene.gltf',
+  function(gltf){
+    earth = gltf.scene;
+    scene.add(earth);
+    earth.scale.set(6,6,6);
+    earth.position.z = 50;
+    earth.position.x = -22;
+    earth.position.y = 10;
+  },
+  function(xhr){
+    console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+  },
+  function(error){
+    console.error(error);
+  }
+)
 let goose;
 loader.load(
   `models/entitled_goose/scene.gltf`,
@@ -169,7 +188,7 @@ moon.position.y = -2;
 
 const jupiterTexture = new THREE.TextureLoader().load('images/jupiter.jpeg');
 const jupiter = new THREE.Mesh(
-  new THREE.SphereGeometry(12,32,32),
+  new THREE.SphereGeometry(8,1000,1000),
   new THREE.MeshStandardMaterial({
     map: jupiterTexture
   })
@@ -177,8 +196,9 @@ const jupiter = new THREE.Mesh(
 
 scene.add(jupiter);
 
-jupiter.position.z = 20;
-jupiter.position.x = -20;
+jupiter.position.z = 16;
+jupiter.position.x = 5;
+jupiter.position.y = 2;
 
 // Space background
 
@@ -213,11 +233,13 @@ function moveCamera(){
   if (spaceStation) {
     spaceStation.rotation.x += 0.005;
   }
-
   if (goose){
     goose.rotation.x += 0.0075;
     goose.rotation.y += -0.005;
     goose.rotation.z += 0.005;  
+  }
+  if (earth){
+    earth.rotation.y -=0.005;
   }
 }
 
@@ -245,6 +267,9 @@ function animate(){
     const hoverFrequency = 0.005;
     const hoverOffSet = Math.sin(Date.now() * hoverFrequency) * hoverAmplitude;
     spaceShip.position.y = initialYPosition + hoverOffSet;
+  }
+  if (earth){
+    earth.rotation.y += -0.002;
   }
 
   moon.rotation.y += 0.005;
