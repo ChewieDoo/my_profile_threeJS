@@ -234,9 +234,7 @@ function moveCamera(){
     spaceStation.rotation.x += 0.005;
   }
   if (goose){
-    goose.rotation.x += 0.0075;
-    goose.rotation.y += -0.005;
-    goose.rotation.z += 0.005;  
+    goose.rotation.y += 0.05;
   }
   if (earth){
     earth.rotation.y -=0.005;
@@ -246,11 +244,14 @@ function moveCamera(){
 document.body.onscroll = moveCamera;
 moveCamera();
 
-// Animate the scene
+// Animate the scene 
+
+let prevTime = 0;
 
 function animate(){
-  requestAnimationFrame(animate); // Whenever webpage updates in frames, object gets rendered
-
+  if (goose){
+    goose.rotation.y += 0.005;
+  }
   if (spaceStation){
     spaceStation.rotation.y += -0.002;
   }
@@ -258,8 +259,8 @@ function animate(){
     computer.rotation.z += 0.0005;
   }
   if (saturn) {
-    saturn.rotation.y += 0.005;
-    saturn.rotation.x += -0.001;
+    saturn.rotation.y += 0.005 ;
+    saturn.rotation.x += -0.00;
   }
   if (spaceShip){
     let initialYPosition = spaceShip.position.y;
@@ -276,7 +277,7 @@ function animate(){
   jupiter.rotation.y += 0.005;
 
   //controls.update();
-
+  requestAnimationFrame(animate); // Whenever webpage updates in frames, object gets rendered
   renderer.render(scene, camera);
 } 
 animate();
