@@ -1,3 +1,31 @@
+// Firebase set up
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDW107pg4HMWFrfvc5w65vO6577OZkJ7CM",
+  authDomain: "mygalaxy-with-3js.firebaseapp.com",
+  projectId: "mygalaxy-with-3js",
+  storageBucket: "mygalaxy-with-3js.appspot.com",
+  messagingSenderId: "857722723195",
+  appId: "1:857722723195:web:147a77ac64f01f48bd7bde",
+  measurementId: "G-EETEH0BV8W"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+//*************************************************************************************************
+
+// THREE.js environment
+
 import './style.css'
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
@@ -281,5 +309,4 @@ function animate(){
   renderer.render(scene, camera);
 } 
 animate();
-
 

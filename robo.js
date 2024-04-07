@@ -66,9 +66,18 @@ function onMouseMove(event) {
   }
 }
 
+let popUp = document.getElementById('popup');
+let firstTime = true;
 document.addEventListener('dblclick', dock);
 
 function dock(){
+  if (firstTime == true){
+    popUp.innerHTML =
+    `<p>Double click again for me to stop following!</p>`;
+    firstTime = false;
+  } else {
+    popUp.style.display = "none";
+  }
   if (docked == true){
     docked = false;
   } else {

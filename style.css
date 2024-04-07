@@ -63,7 +63,6 @@ main {
   position: absolute;
   margin: 0px auto;
   padding: 120px 0px;
-  
   display: grid;
   grid-template-columns: repeat(12, 1fr); /*Creates 12 column of equal width of 1fr (fractional units) divided equally across 12 columns*/
 }
@@ -96,7 +95,6 @@ canvas {
   color: white;
   border-color: #96ccc0;
 }
-
 
 .left {
   grid-column: 6 / 12;
@@ -132,6 +130,19 @@ canvas {
     margin-bottom: 25px;
   }
 
+  blockquote.popup {
+    background: none;
+    grid-column: 10 / 11;
+    text-align: center;
+  }
+
+  blockquote.popup p{
+    background-color:white;
+    color: black;
+    text-align: center;
+    font-size: 1rem;
+  }
+
   section.wrapper{
     grid-column: 2 / span 10;
     padding: 1rem;
@@ -165,8 +176,6 @@ canvas {
     text-align:center;
   }
   
-
-
   /* Row texts */
   .row {
     background: var(--light-bg);
