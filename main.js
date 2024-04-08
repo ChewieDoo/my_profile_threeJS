@@ -160,6 +160,18 @@ loader.load(
     console.error(error);
   }
 );
+let konbini;
+loader.load(
+  'models/konbini/scene.gltf',
+  function(gltf){
+    konbini = gltf.scene;
+    scene.add(konbini);
+    konbini.scale.set(0.0008,0.0008,0.0008);
+    konbini.position.z = 18;
+    konbini.position.x = -1.79;
+    konbini.position.y = -0.8;
+  }
+)
 
 // Lighting 
 
@@ -268,6 +280,9 @@ function moveCamera(){
     earth.rotation.y -=0.005;
   }
 }
+if (konbini){
+  konbini.rotation.y += 0.02;
+}
 
 document.body.onscroll = moveCamera;
 moveCamera();
@@ -299,6 +314,9 @@ function animate(){
   }
   if (earth){
     earth.rotation.y += -0.002;
+  }
+  if (konbini){
+    konbini.rotation.y += 0.002;
   }
 
   moon.rotation.y += 0.005;

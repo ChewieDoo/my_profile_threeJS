@@ -135,5 +135,9 @@ Computer: https://sketchfab.com/3d-models/retro-computer-f844c0357d284fd8baa1435
 
 Planet Textures: https://www.solarsystemscope.com/textures/
 
+Konbini: https://sketchfab.com/3d-models/ultimate-japanese-konbini-43be2d59ae004dba85a4c8306919c180
+
+
+
 
 
